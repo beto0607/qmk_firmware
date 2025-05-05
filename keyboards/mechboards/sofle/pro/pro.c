@@ -13,3 +13,23 @@ void render_logo(void) {
     oled_write_raw_P(pro_logo, sizeof(pro_logo));
 }
 #endif
+
+void leader_end_user(void) {
+    if (leader_sequence_one_key(KC_J)) {
+        tap_code16(LSG(KC_LEFT));
+    } else if (leader_sequence_one_key(KC_K)) {
+        tap_code16(LGUI(KC_DOWN));
+    } else if (leader_sequence_one_key(KC_I)) {
+        tap_code16(LGUI(KC_UP));
+    } else if (leader_sequence_one_key(KC_U)) {
+        tap_code16(LGUI(KC_LEFT));
+    } else if (leader_sequence_one_key(KC_O)) {
+        tap_code16(LGUI(KC_RIGHT));
+    } else if (leader_sequence_one_key(KC_L)) {
+        tap_code16(LSG(KC_RIGHT));
+    } else if(leader_sequence_one_key(KC_W)) {
+        tap_code16(KC_WWW_HOME);
+    } else if(leader_sequence_one_key(KC_T)) {
+        tap_code16(KC_MY_COMPUTER);
+    }
+}
